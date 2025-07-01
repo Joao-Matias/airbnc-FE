@@ -21,7 +21,6 @@ function App() {
 
   return (
     <div>
-      <h1>AirBnb</h1>
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>
