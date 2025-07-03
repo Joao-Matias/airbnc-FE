@@ -5,7 +5,6 @@ import { CiSearch, CiRollingSuitcase, CiRoute, CiHome } from 'react-icons/ci';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AllProperties from '../allProperties';
-import FilterModal from '../filterModal';
 
 const Home = () => {
   const [activeUser, setActiveUser] = useState(null);
@@ -50,7 +49,13 @@ const Home = () => {
         </ul>
       </nav>
       <AllProperties />
-      <FilterModal />
+      <section className={style.filterContainer}>
+        <h1 className={style.logo}>AirBnB</h1>
+        <button className={style.filterButton}>
+          <CiSearch className={style.searchIcon} />
+          Search
+        </button>
+      </section>
     </div>
   );
 };

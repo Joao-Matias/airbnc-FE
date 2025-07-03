@@ -35,3 +35,33 @@
   font-size: 3rem;
   color: black;
 }
+
+.filterContainer {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 10rem;
+  color: black;
+  border: 0rem transparent transparent;
+  background-color: rgb(237, 237, 237);
+}
+
+.logo {
+  font-size: 3rem;
+  color: black;
+}
+
+.searchIcon {
+  font-size: 1.5rem;
+  color: black;
+  margin: 0;
+}
