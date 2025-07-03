@@ -1,5 +1,3 @@
-const FilterModal = () => {
-    return()
-};
+const FilterModal = () => {};
 
 export default FilterModal;
