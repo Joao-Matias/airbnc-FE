@@ -1,38 +1,31 @@
 import style from './home.module.css';
-import { Link } from 'react-router-dom';
-import { CiUser, CiSearch, CiRollingSuitcase, CiRoute, CiHome } from 'react-icons/ci';
+import { Link } from 'react-router';
+import { CiSearch, CiRollingSuitcase, CiRoute, CiHome } from 'react-icons/ci';
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
-const apiKey = process.env.API_KEY;
+import AllProperties from '../allProperties';
+import FilterModal from '../filterModal';
 
 const Home = () => {
-  const [activeUser, setActiveUser] = useState('1');
+  const [activeUser, setActiveUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   axios
-  //     .get('https://irmeohnkzcyspiqkwyjb.supabase.co/rest/v1/users/1', {
-  //       headers: {
-  //         apikey: apiKey,
-  //       },
-  //     })
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [activeUser]);
+  useEffect(() => {
+    axios.get(`https://nc-airbnb-jm.onrender.com/api/users/2`).then(({ data }) => {
+      setActiveUser(data);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) return <p className={style.loading}>loading...</p>;
 
   return (
     <div className={style.homeContainer}>
       <nav className={style.homeNav}>
         <ul className={style.navList}>
           <li>
-            <Link>
-              <CiUser className={style.navIcon} />
-            </Link>
+            <img className={style.userIcon} src={activeUser.user.avatar} />
           </li>
           <li>
             <Link>
@@ -56,7 +49,8 @@ const Home = () => {
           </li>
         </ul>
       </nav>
-      <h1 className={style.logo}>AirBnB</h1>
+      <AllProperties />
+      <FilterModal />
     </div>
   );
 };

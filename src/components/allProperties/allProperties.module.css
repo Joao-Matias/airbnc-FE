@@ -1,0 +1,42 @@
+.loading {
+  font-size: 3rem;
+  color: black;
+}
+
+.propertiesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0;
+  width: 100vw;
+  overflow: scroll;
+  list-style: none;
+}
+
+.propertyCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.propertyImg {
+  height: 8rem;
+  border-radius: 2rem;
+}
+
+.propertyTitle {
+  color: black;
+  display: flex;
+  font-size: 1.3rem;
+}
+
+p {
+  color: black;
+  font-size: 0.8rem;
+}
+
+.propertyCardDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
