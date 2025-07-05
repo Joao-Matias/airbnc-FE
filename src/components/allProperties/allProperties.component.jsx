@@ -13,8 +13,6 @@ const AllProperties = () => {
     });
   }, []);
 
-  console.log(activeProperties);
-
   if (isLoading) return <p className={style.loading}>Loading...</p>;
 
   return (

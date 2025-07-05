@@ -5,10 +5,13 @@ import { CiSearch, CiRollingSuitcase, CiRoute, CiHome } from 'react-icons/ci';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AllProperties from '../allProperties';
+import FilterModal from '../filterModal';
 
 const Home = () => {
   const [activeUser, setActiveUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const [modalActive, setModalActive] = useState(false);
 
   useEffect(() => {
     axios.get(`https://nc-airbnb-jm.onrender.com/api/users/2`).then(({ data }) => {
@@ -51,11 +54,17 @@ const Home = () => {
       <AllProperties />
       <section className={style.filterContainer}>
         <h1 className={style.logo}>AirBnB</h1>
-        <button className={style.filterButton}>
+        <button
+          onClick={() => {
+            setModalActive(true);
+          }}
+          className={style.filterButton}
+        >
           <CiSearch className={style.searchIcon} />
           Search
         </button>
       </section>
+      {modalActive && <FilterModal />}
     </div>
   );
 };
