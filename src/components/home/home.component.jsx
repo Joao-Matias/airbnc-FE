@@ -32,21 +32,25 @@ const Home = () => {
           <li>
             <Link>
               <CiSearch className={style.navIcon} />
+              <p className={style.iconTitles}>Search</p>
             </Link>
           </li>
           <li>
             <Link>
               <CiRollingSuitcase className={style.navIcon} />
+              <p className={style.iconTitles}>Bookings</p>
             </Link>
           </li>
           <li>
             <Link>
               <CiRoute className={style.navIcon} />
+              <p className={style.iconTitles}>Last Property</p>
             </Link>
           </li>
           <li>
             <Link>
               <CiHome className={style.navIcon} />
+              <p className={style.iconTitles}>My Properties</p>
             </Link>
           </li>
         </ul>
@@ -64,7 +68,7 @@ const Home = () => {
           Search
         </button>
       </section>
-      {modalActive && <FilterModal />}
+      {/* {modalActive && <FilterModal />} */}
     </div>
   );
 };

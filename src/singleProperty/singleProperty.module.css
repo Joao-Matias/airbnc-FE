@@ -1,0 +1,70 @@
+.loading {
+  font-size: 3rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+  overflow: hidden;
+}
+
+.nav {
+  position: fixed;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  margin: 0;
+}
+
+.iconButton {
+  background-color: rgb(188, 188, 188);
+  height: 4rem;
+  width: 4rem;
+  border-radius: 20rem;
+  margin: 2rem;
+}
+
+.icon {
+  font-size: 2.7rem;
+  color: black;
+}
+
+.heartIcon {
+  font-size: 2.7rem;
+  color: black;
+}
+
+.propertyContainer {
+  background-color: blue;
+  display: grid;
+  grid-template-rows: 4fr 1fr 1fr 1fr 2fr 1fr;
+}
+
+.imgCaroussel {
+  display: flex;
+  width: 100vw;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.imageContainer {
+  list-style: none;
+}
+
+.image {
+  height: 100vw;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.footerContainer {
+  background-color: red;
+}
