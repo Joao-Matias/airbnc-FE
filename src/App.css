@@ -5,3 +5,7 @@
   box-sizing: border-box;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.loading {
+  font-size: 3rem;
+}

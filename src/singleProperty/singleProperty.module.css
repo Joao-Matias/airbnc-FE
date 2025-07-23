@@ -42,17 +42,31 @@
   color: black;
 }
 
+.heartIconFilled {
+  font-size: 2.7rem;
+  color: red;
+}
+
 .propertyContainer {
-  background-color: blue;
   display: grid;
-  grid-template-rows: 4fr 1fr 1fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .imgCaroussel {
   display: flex;
   width: 100vw;
   padding: 0;
-  overflow-x: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.imgCaroussel::-webkit-scrollbar {
+  display: none;
+}
+
+.imgCaroussel .imageContainer {
+  scroll-snap-align: start;
 }
 
 .imageContainer {
@@ -63,6 +77,32 @@
   height: 100vw;
   width: 100vw;
   object-fit: cover;
+}
+
+.propertyDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  transform: translateY(-15%);
+  border-radius: 4rem;
+}
+
+.propertyDetails {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.propertyTitle {
+  color: rgb(19, 19, 19);
+  font-size: 2rem;
+}
+
+.propertyText {
+  font-size: 1.2rem;
+  display: flex;
 }
 
 .footerContainer {

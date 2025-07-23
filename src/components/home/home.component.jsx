@@ -2,25 +2,12 @@ import style from './home.module.css';
 import { Link } from 'react-router';
 import { CiSearch, CiRollingSuitcase, CiRoute, CiHome } from 'react-icons/ci';
 
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import AllProperties from '../allProperties';
 import FilterModal from '../filterModal';
 
-const Home = () => {
-  const [activeUser, setActiveUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
+const Home = ({ activeUser }) => {
   const [modalActive, setModalActive] = useState(false);
-
-  useEffect(() => {
-    axios.get(`https://nc-airbnb-jm.onrender.com/api/users/2`).then(({ data }) => {
-      setActiveUser(data);
-      setIsLoading(false);
-    });
-  }, []);
-
-  if (isLoading) return <p className={style.loading}>loading...</p>;
 
   return (
     <div className={style.homeContainer}>
