@@ -82,7 +82,7 @@
 .propertyDescription {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+
   background-color: white;
   transform: translateY(-15%);
   border-radius: 4rem;
@@ -90,14 +90,17 @@
 
 .propertyDetails {
   margin: 2rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid rgba(81, 81, 81, 0.4);
 }
 
 .propertyTitle {
   color: rgb(19, 19, 19);
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .propertyText {

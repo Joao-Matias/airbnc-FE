@@ -5,11 +5,12 @@ import axios from 'axios';
 import { CiUndo } from 'react-icons/ci';
 import { IoIosHeartEmpty, IoMdHeart } from 'react-icons/io';
 
+import Amenities from '../amenities';
+
 const SingleProperty = ({ activeUser }) => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProperty, setSelectedProperty] = useState(null);
-  const [amenities, setAmenities] = useState(null);
 
   useEffect(() => {
     axios
@@ -18,15 +19,9 @@ const SingleProperty = ({ activeUser }) => {
         setSelectedProperty(data.property);
         setIsLoading(false);
       });
-
-    axios.get(`https://nc-airbnb-jm.onrender.com/api/properties/${id}/amenities`).then(({ data }) => {
-      setAmenities(data.amenities);
-    });
   }, [id, activeUser.user.user_id]);
 
   if (isLoading) return <h1 className={style.loading}>LOADING PROPERTY {id}...</h1>;
-
-  console.log(selectedProperty);
 
   return (
     <section className={style.container}>
@@ -56,13 +51,11 @@ const SingleProperty = ({ activeUser }) => {
         </ul>
         <section className={style.propertyDescription}>
           <div className={style.propertyDetails}>
-            <h2 className={style.propertyTitle}>{selectedProperty.property_name}</h2>
+            <h1 className={style.propertyTitle}>{selectedProperty.property_name}</h1>
             <p className={style.propertyText}>{selectedProperty.description}</p>
             <p>{selectedProperty.location}</p>
           </div>
-          <div>
-            <h2>Amenities</h2>
-          </div>
+          <Amenities id={id} />
           <h1>Reviews</h1>
           <h1>Calender</h1>
           <h1>Host</h1>

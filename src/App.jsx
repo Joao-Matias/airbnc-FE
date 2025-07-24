@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router';
 import Home from './components/home';
-import SingleProperty from './singleProperty';
+import SingleProperty from './components/singleProperty';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
