@@ -23,18 +23,18 @@ const Amenities = ({ id }) => {
     });
   }, [id]);
 
-  const checkAmenity = (amenity) => {
+  const checkAmenity = (amenity, index) => {
     switch (amenity) {
       case 'Fireplace':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <GiFireplace className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'WiFi':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <FaWifi className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
@@ -42,7 +42,7 @@ const Amenities = ({ id }) => {
 
       case 'Kitchen':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <PiCookingPot className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
@@ -50,154 +50,154 @@ const Amenities = ({ id }) => {
 
       case 'Ski-in/Ski-out':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <FaSkiing className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Air conditioning':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <TbAirConditioning className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Banquet hall':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <GiHotMeal className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'BBQ':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <GiBarbecue className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Beach access':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <TbBeach className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Coffee maker':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <MdOutlineCoffeeMaker className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Desk':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <MdDesk className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Dryer':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <BiSolidDryer className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Elevator':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <FaElevator className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Garden':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <MdOutlineYard className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Gardens':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <GiFlowers className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Hot tub':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <LiaHotTubSolid className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Infinity pool':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <PiSwimmingPoolLight className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Iron':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <TbIroning className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Lake view':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <GiWindow className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Mini fridge':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <MdOutlineKitchen className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Outdoor seating':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <SiBlockbench className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Parking':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <LuCircleParking className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Library':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <IoLibraryOutline className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'TV':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <FaTv className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Washing Machine':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <LuWashingMachine className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
         );
       case 'Work desk':
         return (
-          <li className={style.singleAmenity}>
+          <li key={index} className={style.singleAmenity}>
             <MdDesk className={style.amenityIcon} />
             <h3 className={style.amenityText}>{amenity}</h3>
           </li>
@@ -208,7 +208,11 @@ const Amenities = ({ id }) => {
   return (
     <div className={style.propertyDetails}>
       <h2 className={style.propertySubTitle}>Amenities</h2>
-      <ul className={style.amenityContainer}>{amenities.map(checkAmenity)}</ul>
+      <ul className={style.amenityContainer}>
+        {amenities.map((amenity, i) => {
+          return checkAmenity(amenity, i);
+        })}
+      </ul>
     </div>
   );
 };
