@@ -6,6 +6,7 @@ import { CiUndo } from 'react-icons/ci';
 import { IoIosHeartEmpty, IoMdHeart } from 'react-icons/io';
 
 import Amenities from '../amenities';
+import Reviews from '../reviews';
 
 const SingleProperty = ({ activeUser }) => {
   const { id } = useParams();
@@ -56,7 +57,7 @@ const SingleProperty = ({ activeUser }) => {
             <p>{selectedProperty.location}</p>
           </div>
           <Amenities id={id} />
-          <h1>Reviews</h1>
+          <Reviews id={id} />
           <h1>Calender</h1>
           <h1>Host</h1>
           <h1>Other host properties</h1>
