@@ -5,12 +5,13 @@
 
 .propertiesList {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, 20rem);
   gap: 1.5rem;
   padding: 0;
   width: 100vw;
   overflow: scroll;
   list-style: none;
+  justify-content: center;
 }
 
 .propertyCard {
@@ -22,7 +23,7 @@
 }
 
 .propertyImg {
-  height: 8.7rem;
+  height: 10rem;
   border-radius: 2rem;
 }
 

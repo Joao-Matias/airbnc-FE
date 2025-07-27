@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import style from './reviews.module.css';
 import axios from 'axios';
-import { FaStar } from 'react-icons/fa';
+import { FaRegStar, FaStar } from 'react-icons/fa6';
 
 const Reviews = ({ id }) => {
   const [reviews, setReviews] = useState([]);
@@ -16,23 +16,56 @@ const Reviews = ({ id }) => {
     });
   }, [id]);
 
-  console.log(reviews);
+  const getCorrectStars = (rating) => {
+    const stars = [];
 
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        stars.push(<FaStar key={i} className={style.individualReviewRating} />);
+      } else {
+        stars.push(<FaRegStar key={i} className={style.individualReviewRating} />);
+      }
+    }
+    return stars;
+  };
+
+  const getDate = (fullDate) => {
+    const createdDate = new Date(fullDate);
+
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dec'];
+
+    return `${months[createdDate.getMonth() + 1]}, ${createdDate.getFullYear()}`;
+  };
+
+  getDate('2025-06-10T10:38:05.893Z');
   return (
     <div className={style.propertyDetails}>
-      <h2 className={style.propertySubTitle}>Reviews</h2>
-      <p className={style.reviewNumber}>{`(${reviewsLength})`}</p>
-      <div className={style.ratingCont}>
-        <FaStar className={style.ratingStar} />
-        <h3 className={style.rating}>{reviewRating}</h3>
+      <div className={style.reviewTitle}>
+        <h2 className={style.propertySubTitle}>Reviews</h2>
+        <p className={style.reviewNumber}>{`(${reviewsLength})`}</p>
+        <div className={style.ratingCont}>
+          <FaStar className={style.ratingStar} />
+          <h3 className={style.rating}>{reviewRating}</h3>
+        </div>
       </div>
-      <div>
-        <ul>
-          {reviews.map((review) => {
-            console.log(review);
-          })}
-        </ul>
-      </div>
+
+      <ul className={style.individualReview}>
+        {reviews.map((review) => {
+          return (
+            <li className={style.reviewContainer} key={review.review_id}>
+              <div className={style.reviewHeader}>
+                <div>{getCorrectStars(review.rating)}</div>
+                <p>{getDate(review.created_at)}</p>
+              </div>
+              <p>{review.comment}</p>
+              <div className={style.reviewGuestContainer}>
+                <img className={style.reviewGuestImg} src={review.guest_avatar} />
+                <p>{review.guest}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

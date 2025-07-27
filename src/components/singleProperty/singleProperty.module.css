@@ -3,20 +3,21 @@
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
   background-color: white;
   display: grid;
-  grid-template-rows: 9fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  width: 100vw;
 }
 
 .nav {
   position: fixed;
   height: 7rem;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 5;
 }
 
 .link {
@@ -58,6 +59,7 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 .imgCaroussel::-webkit-scrollbar {
@@ -81,10 +83,11 @@
 .propertyDescription {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: white;
-  transform: translateY(-15%);
+  transform: translateY(-30%);
   border-radius: 4rem;
+
+  width: 100vw;
 }
 
 .propertyDetails {

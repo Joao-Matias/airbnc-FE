@@ -19,12 +19,10 @@ function App() {
   if (isLoading) return <p>loading...</p>;
 
   return (
-    <div>
-      <Routes>
-        <Route path='/properties/:id' element={<SingleProperty activeUser={activeUser} />} />
-        <Route path='/*' element={<Home activeUser={activeUser} />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path='/properties/:id' element={<SingleProperty activeUser={activeUser} />} />
+      <Route path='/*' element={<Home activeUser={activeUser} />} />
+    </Routes>
   );
 }
 
